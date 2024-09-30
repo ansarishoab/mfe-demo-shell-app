@@ -19,26 +19,26 @@ export class AppComponent {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    if (environment.production && false) {
-      //call the api to get actual routes
-    } else {
-      const dynamicRoutes: any = [
-        {
-          path: 'mfe2',
-          loadChildren: () =>
-            loadRemoteModule({
-              type: 'module',
-              remoteEntry: 'http://localhost:4202/remoteEntry.js',
-              exposedModule: './Routes',
-            }).then((m) => m.remoteRoutes),
-        },
-      ];
-      this.router.resetConfig([...this.router.config, ...dynamicRoutes]);
-    }
+    const dynamicRoutes: any = environment.dynamicRoutes.map((r) => {
+      return {
+        path: r.path,
+        loadChildren: () =>
+          loadRemoteModule({
+            type: 'module',
+            remoteEntry: r.remoteEntry,
+            exposedModule: r.exposedModule,
+          }).then((m) => m[r.returnedModule]),
+      };
+    });
+
     const wildCardRoute: any = {
       path: '**',
       component: PageNotFoundComponent,
     };
-    this.router.resetConfig([...this.router.config, wildCardRoute]);
+    this.router.resetConfig([
+      ...this.router.config,
+      ...dynamicRoutes,
+      wildCardRoute,
+    ]);
   }
 }
