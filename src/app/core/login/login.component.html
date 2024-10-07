@@ -1,0 +1,96 @@
+<div class="row">
+    <div class="col-xl-12">
+      <div class="tab-content">
+        <div class="tab-pane show active">
+          <div class="table-responsive-sm">
+            <div class="row">
+              <div class="col-xl-6 Mqyery" style="background-color: #D1D3D4;text-align:center;height:100vh;width:49%">
+                <img src="assets/login-Page-Images/Image1.svg">
+                <h4 style="color:black;">Access360</h4>
+                <h5>Intelligent security for smart spaces</h5>
+                <!--<img src="assets/Group 181.svg">-->
+                <div class="login-link-container">
+                  <a href="https://www.idcubesystems.com/products/solutions/access-control/" target="_blank"><img src="assets/login-Page-Images/AccessControlSolution.svg" /></a>
+                  <a href="https://www.idcubesystems.com/products/solutions/attendance/" target="_blank"><img src="assets/login-Page-Images/Attendance&LeaveMang.svg" /></a>
+                  <a href="https://www.idcubesystems.com/products/solutions/visitor-management/" target="_blank"><img src="assets/login-Page-Images/VisitorMangSystem.svg" /></a>
+                  <a href="https://www.idcubesystems.com/products/solutions/analytical-dashboard/" target="_blank"><img src="assets/login-Page-Images/AIBasedImage.svg" /></a>
+                  <a href="https://www.idcubesystems.com/products/solutions/greenid/" target="_blank"><img src="assets/login-Page-Images/MobileApp.svg" /></a>
+                  <!--<a style="max-width:272px"><img src="../../../assets/empty.jpg" /></a>-->
+                </div>
+              </div>
+  
+              <div class="col-xl-6" style="align-content:center; width:50%">
+                <div class="logo">
+                  <img src="assets/login-Page-Images/Acs360logo.svg">
+                  <h2 style="line-height:50px">
+                    Login to your account
+                  </h2>
+                </div>
+                <div class="form-fields container">
+                  <form>
+                    <div class="form-group" *ngIf="showEmail">
+                      <input type="email" class="form-control" [(ngModel)]="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address" autocomplete="off" [ngModelOptions]="{standalone: true}" required>
+                      <label class="form-label" for="exampleInputEmail1"></label>
+                    </div>
+                    <div class="form-group" *ngIf="showPasswordLogin">
+                      <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="password" placeholder="Password" [ngModelOptions]="{standalone: true}" required>
+                      <label class="form-label" for="exampleInputEmail1"></label>
+                    </div>
+                    <div class="details">
+                      <span href="" class="discrete" target="_blank">By continuing I agree to IDCUBE <a href="https://www.idcubesystems.com/privacy-security/" target="_blank" style="color: #696969;">Privacy Policy</a> and <a href="https://www.idcubesystems.com/terms-of-service/" target="_blank" style="color: #696969;">Terms of Use</a></span>
+                    </div>
+                    <button type="submit" class="login-button" (click)="login()">Continue</button>
+                  </form>
+                </div>
+                <div class="poweredby">
+                  <a href="htt://www.idcubtems.com">
+                    <img src="assets/login-Page-Images/Group 78.svg">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- end tab-content-->
+    </div><!-- end col -->
+  </div><!-- end row -->
+  <!--<div class="container login-container">
+    <div class="row">
+      <div class="col" style="background-color: #D1D3D4">
+        <img src="assets/Image1.svg">
+        <h4 style="color:black">Access360</h4>
+        <h5 style="coloblack">Intelligent security for smart spaces</h5>
+        <img src="assets/Group 181.svg">
+      </div>
+      <div class="col">
+        <div class="logo">
+          <img src="assets/Acs360logo.svg">
+          <h2>
+            Login to your account
+          </h2>
+        </div>
+        <div class="form-fields container">
+          <form>
+            <div class="form-group" *ngIf="showEmail">
+              <input type="email" class="form-control" [(ngModel)]="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" " autocomplete="off" [ngModelOptions]="{standalone: true}" required>
+              <label class="form-label" for="exampleInputEmail1">Email Address</label>
+            </div>
+            <div class="form-group" *ngIf="showPasswordLogin">
+              <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required>
+              <label class="form-label" for="exampleInputEmail1">Password</label>
+            </div>
+            <div class="details">
+              <span href="" class="discrete" target="_blank">By continuing I agree to IDCUBE <a href="https://www.idcubesystems.com/privacy-security/" target="_blank" style="color: #696969;">Privacy Policy</a> and <a href="https://www.idcubesystems.com/terms-of-service/" target="_blank" style="color: #696969;">Terms of Use</a></span>
+            </div>
+            <button type="submit" class="login-button" (click)="login()">Continue</button>
+          </form>
+        </div>
+      <div class="poweredby">
+        <a href="htt://www.idcubtems.com">
+          <img src="assets/Group 78.svg">
+        </a>
+      </div>
+      </div>
+    </div>
+  </div>-->
+  
