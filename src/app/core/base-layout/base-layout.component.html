@@ -1,4 +1,5 @@
 <!-- Begin page -->
+<div *ngIf="!excludeHeaderFooter.includes(currentRouterPath) ; else withOutHeaderFooter">
 <div class="wrapper">
     <!-- ========== Topbar Start ========== -->
     <div class="navbar-custom">
@@ -531,7 +532,7 @@
             <div class="collapse" id="sidebarReports">
               <ul class="side-nav-second-level">
                 <li>
-                  <a>Attendance report</a>
+                  <a [routerLink]="['/report/report-list']">Attendance report</a>
                 </li>
                 <li>
                   <a>Access report</a>
@@ -1268,5 +1269,15 @@
       </div>
     </div>
   </div>
-  
+</div>
+
+<ng-template #withOutHeaderFooter>
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+        <!-- container -->
+    </div>
+  </ng-template>
   

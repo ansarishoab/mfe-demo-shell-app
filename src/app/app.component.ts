@@ -15,7 +15,6 @@ import { LoginComponent } from './core/login/login.component';
 })
 export class AppComponent {
   title = 'shell-app';
-
   constructor(private router: Router) {}
 
   ngOnInit() {
