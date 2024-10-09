@@ -23,8 +23,10 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "less",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.less"],
-            "scripts": [],
+            "styles": ["src/styles.less","src/styles.css"],
+            "scripts": [ "src/assets/js/hyper-config.js",
+            "src/assets/js/vendor.min.js", 
+            "src/assets/js/app.min.js"],
             "main": "src/main.ts",
             "extraWebpackConfig": "webpack.config.js",
             "commonChunk": false
@@ -34,8 +36,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",

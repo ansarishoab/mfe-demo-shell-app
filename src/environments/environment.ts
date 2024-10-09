@@ -6,6 +6,12 @@ export const environment = {
       remoteEntry: 'https://mfe-demo-mfe2.vercel.app/remoteEntry.js',
       exposedModule: './Routes',
       returnedModule: 'remoteRoutes',
+    },
+    {
+      path: 'report',
+      remoteEntry: '',
+      exposedModule: './Routes',
+      returnedModule: 'remoteRoutes',
     }
   ]
 };
