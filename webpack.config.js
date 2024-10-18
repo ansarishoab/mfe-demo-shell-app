@@ -11,10 +11,17 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "shellApp",
-    publicPath: "auto"
+    publicPath: "auto",  // Automatically set the public path based on the request URL
   },
   optimization: {
-    runtimeChunk: false
+    runtimeChunk: false  // Disable runtime chunk for simpler builds, can be set to true for improved caching
+  },
+  devServer: {
+    headers: {
+      'Access-Control-Allow-Origin': '*',  // Allow all origins (CORS configuration)
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept, Authorization',
+    },
   },
   resolve: {
     alias: {
@@ -22,7 +29,7 @@ module.exports = {
     }
   },
   experiments: {
-    outputModule: true
+    outputModule: true  // Enable output module support for Module Federation
   },
   plugins: [
     new ModuleFederationPlugin({

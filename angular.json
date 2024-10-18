@@ -22,11 +22,17 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "less",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/web.config"
+            ],
             "styles": ["src/styles.less"],
-            "scripts": [ "src/assets/js/hyper-config.js",
-            "src/assets/js/vendor.min.js", 
-            "src/assets/js/app.min.js"],
+            "scripts": [
+              "src/assets/js/hyper-config.js",
+              "src/assets/js/vendor.min.js",
+              "src/assets/js/app.min.js"
+            ],
             "main": "src/main.ts",
             "extraWebpackConfig": "webpack.config.js",
             "commonChunk": false

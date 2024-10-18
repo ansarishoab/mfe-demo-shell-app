@@ -3,13 +3,13 @@ export const environment = {
   dynamicRoutes: [
     {
       path: 'mfe2',
-      remoteEntry: 'https://mfe-demo-mfe2.vercel.app/remoteEntry.js',
+      remoteEntry: 'http://acs360.com:84//remoteEntry.js',
       exposedModule: './Routes',
       returnedModule: 'remoteRoutes',
     },
     {
       path: 'report',
-      remoteEntry: '',
+      remoteEntry: 'http://acs360.com:93/remoteEntry.js',
       exposedModule: './Routes',
       returnedModule: 'remoteRoutes',
     }
