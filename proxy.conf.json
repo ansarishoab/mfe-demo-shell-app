@@ -1,0 +1,8 @@
+{
+  "/remoteEntry.js": {
+    "target": "http://192.168.1.12:82",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
