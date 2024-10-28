@@ -1,0 +1,15 @@
+<div class="login-container">
+    <h2>Login demo</h2>
+    <div>
+      <label for="email">Your email:</label>
+      <input id="email" type="email" [(ngModel)]="email" placeholder="Enter your email" />
+    </div>
+    
+    <div>
+      <label for="password">Password:</label>
+      <input id="password" type="password" [(ngModel)]="password" placeholder="Enter your password" />
+    </div>
+    
+    <button (click)="loginHandler()">Click to Login</button>
+  </div>
+  

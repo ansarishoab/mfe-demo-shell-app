@@ -5,6 +5,8 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 import { environment } from '../environments/environment';
 import { BaseLayoutComponent } from './core/base-layout/base-layout.component';
 import { LoginComponent } from './core/login/login.component';
+import { fromEvent, Subscription } from 'rxjs';
+import { SessionStoreService } from './Services/session-store.service';
 
 @Component({
   selector: 'app-root',
@@ -15,11 +17,13 @@ import { LoginComponent } from './core/login/login.component';
 })
 export class AppComponent {
   title = 'shell-app';
-
-  constructor(private router: Router) {}
+  private customRemoteEventSubscription: Subscription | undefined;
+  constructor(private router: Router, private sessionStoreService: SessionStoreService) {}
 
   ngOnInit() {
-    // debugger
+    //add listner to listen remote apps.
+     this.customRemoteEventSubscription = this.sessionStoreService.listenRemoteEvents(); 
+     
     const dynamicRoutes: any = environment.dynamicRoutes.map((r) => {
       return {
         path: r.path,
@@ -49,5 +53,8 @@ export class AppComponent {
       ...dynamicRoutes,
       wildCardRoute,
     ]);
+  }
+  ngOnDestroy(): void {
+    this.customRemoteEventSubscription?.unsubscribe();
   }
 }
