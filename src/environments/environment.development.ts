@@ -3,7 +3,7 @@ export const environment = {
   dynamicRoutes: [
     {
       path: 'mfe2',
-      remoteEntry: 'http://acs360.com:84//remoteEntry.js',
+      remoteEntry: 'http://localhost:4202/remoteEntry.js',
       exposedModule: './Routes',
       returnedModule: 'remoteRoutes',
     },

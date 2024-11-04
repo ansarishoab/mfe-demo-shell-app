@@ -25,7 +25,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/web.config"
+              "src/web.config",
+              { "glob": "**/*", "input": "node_modules/@ansarishoab/my-lib/assets/js", "output": "assets/my-lib/js" },
+              { "glob": "**/*", "input": "node_modules/@ansarishoab/my-lib/assets/images", "output": "assets/my-lib/images" }
             ],
             "styles": ["src/styles.less"],
             "scripts": [

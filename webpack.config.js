@@ -25,6 +25,7 @@ module.exports = {
   },
   resolve: {
     alias: {
+      '@ansarishoab/my-lib': path.resolve(__dirname, 'node_modules/@ansarishoab/my-lib'),
       ...sharedMappings.getAliases(),
     }
   },

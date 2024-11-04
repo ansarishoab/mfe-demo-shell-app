@@ -23,9 +23,9 @@ export class BaseLayoutComponent {
       console.log('Updated route:', event.urlAfterRedirects); // Log the updated route
       this.currentRouterPath = event.urlAfterRedirects ?? event.url;
     });
-    this.loadScript('assets/js/app.min.js');
-    this.loadScript('assets/js/hyper-config.js');
-    this.loadScript('assets/js/vendor.min.js');
+    this.loadScript('assets/my-lib/js/app.min.js');
+    this.loadScript('assets/my-lib/js/hyper-config.js');
+    this.loadScript('assets/my-lib/js/vendor.min.js');
   }
   private loadScript(src: string): void {
     const script = document.createElement('script');
