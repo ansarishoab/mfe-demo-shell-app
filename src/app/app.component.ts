@@ -5,8 +5,9 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 import { environment } from '../environments/environment';
 import { BaseLayoutComponent } from './core/base-layout/base-layout.component';
 import { LoginComponent } from './core/login/login.component';
-import { fromEvent, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { SessionStoreService } from './Services/session-store.service';
+import { AuthService } from './Services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -18,12 +19,20 @@ import { SessionStoreService } from './Services/session-store.service';
 export class AppComponent {
   title = 'shell-app';
   private customRemoteEventSubscription: Subscription | undefined;
-  constructor(private router: Router, private sessionStoreService: SessionStoreService) {}
+  constructor(
+    private router: Router,
+    private sessionStoreService: SessionStoreService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
+    const token = localStorage.getItem('accessToken');
+    if (token) {
+      this.authService.getUser();
+    }
     //add listner to listen remote apps.
-     this.customRemoteEventSubscription = this.sessionStoreService.listenRemoteEvents(); 
-     
+    this.customRemoteEventSubscription =
+      this.sessionStoreService.listenRemoteEvents();
     const dynamicRoutes: any = environment.dynamicRoutes.map((r) => {
       return {
         path: r.path,
@@ -36,7 +45,7 @@ export class AppComponent {
             .then((m) => m[r.returnedModule])
             .catch((err) => {
               console.error(`Error loading remote module: ${r.path}`, err);
-              return null;  // Handle this appropriately (e.g., show error page)
+              return null; // Handle this appropriately (e.g., show error page)
             }),
       };
     });
