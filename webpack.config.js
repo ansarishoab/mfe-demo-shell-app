@@ -11,7 +11,8 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "shellApp",
-    publicPath: "auto",  // Automatically set the public path based on the request URL
+    publicPath: "auto",  // Automatically set the public path based on the request URL,
+    scriptType: 'text/javascript'  // Set the script type for the output
   },
   optimization: {
     runtimeChunk: false  // Disable runtime chunk for simpler builds, can be set to true for improved caching
